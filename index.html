@@ -3,42 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medusa FS | Coming Soon</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Medusa FS | Kernel-Level Ransomware Defense</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800;900&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <header>
-        <div class="header-container">
-            <a href="#" class="logo-container">
-                <img src="images/whiteguard-logo.png" alt="Whiteguard Logo" class="logo-img">
-                <span class="logo-text">Medusa FS</span>
-            </a>
+    <div class="grid-background"></div>
+
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="assets/whiteguard-logo.png" alt="Medusa Logo" class="nav-logo">
+            <span class="nav-name">Medusa FS</span>
         </div>
-    </header>
+        <ul class="nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How it Works</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#contact" class="btn-outline">Contact Us</a></li>
+        </ul>
+    </nav>
 
-    <section class="coming-soon">
-        <div class="content-wrapper">
-            <div class="icon-glow">
-                <i class="fas fa-shield-virus"></i>
-            </div>
-            <h1 class="glitch-text" data-text="COMING SOON">COMING SOON</h1>            
-            <div class="progress-container">
-                <div class="progress-bar"></div>
-            </div>
-
-            <div class="social-links">
-                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-                <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>TURN THREATS<br><span class="highlight">TO STONE.</span></h1>
+            <p class="subtitle">Kernel-Level Ransomware Defense for Industrial IoT and Legacy Systems. Zero AI. Zero False Positives.</p>
+            <div class="hero-buttons">
+                <a href="#how-it-works" class="btn-primary">Explore Tech</a>
+                <a href="https://github.com/" target="_blank" class="btn-secondary"><i class="fa-brands fa-github"></i> View GitHub</a>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Whiteguard. All rights reserved.</p>
+    <section id="features" class="section">
+        <h2 class="section-title">Why Medusa FS?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fa-solid fa-microchip feature-icon"></i>
+                <h3>Kernel Interception</h3>
+                <p>Operates beneath the user space. We intercept malicious I/O requests at the lowest OS level before they touch real data.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-spider feature-icon"></i>
+                <h3>Infinite Tarpit</h3>
+                <p>Instead of blocking, we trap. Ransomware is fed an infinite stream of junk data, freezing its execution state permanently.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-battery-empty feature-icon"></i>
+                <h3>Zero Storage</h3>
+                <p>Our decoy files appear to be gigabytes in size but consume absolutely zero physical disk space. Perfect for lightweight IoT.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="section dark-bg">
+        <h2 class="section-title">The Deception Logic</h2>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">01</div>
+                <h3>Deploy Traps</h3>
+                <p>Virtual files are projected into the system. They look valuable (e.g., passwords.db) but are just illusions.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">02</div>
+                <h3>The Trigger</h3>
+                <p>Ransomware scans the drive and attempts to encrypt the decoy. Legitimate software ignores these hidden files.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">03</div>
+                <h3>Stasis (SIGSTOP)</h3>
+                <p>The Kernel Driver instantly detects the illegal access, halts the I/O, and sends a STOP signal to the malicious process.</p>
+            </div>
+        </div>
+        
+        <div class="terminal-mockup">
+            <div class="terminal-header">
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                <span class="terminal-title">root@medusa-node:~</span>
+            </div>
+            <div class="terminal-body">
+                <p><span class="prompt">$</span> ./medusa_driver mount /mnt/traps</p>
+                <p class="success">[ OK ] Virtual Decoys Deployed.</p>
+                <p><span class="prompt">$</span> waiting for I/O anomalies...</p>
+                <p class="alert">[!!!] ALERT: INTRUSION DETECTED [!!!]</p>
+                <p class="alert">[INFO] PID 4092 targeted trap file. Initiating Tarpit...</p>
+                <p class="success">[ OK ] Process Frozen. Threat Neutralized.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="section">
+        <h2 class="section-title">Meet The Core Team</h2>
+        <div class="team-container">
+            <div class="team-member">
+                <div class="img-wrapper">
+                    <img src="assets/kalantzis.jpg" alt="CEO" class="member-photo">
+                </div>
+                <h3 class="member-name">Kalantzis Ektoras</h3>
+                <p class="member-role">CEO & Co-Founder</p>
+                <div class="member-socials">
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="img-wrapper">
+                    <img src="assets/grivas.jpg" alt="CTO" class="member-photo">
+                </div>
+                <h3 class="member-name">Grivas Marios</h3>
+                <p class="member-role">CTO & Lead Kernel Dev</p>
+                <div class="member-socials">
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="img-wrapper">
+                    <img src="assets/mpetas.jpg" alt="Member" class="member-photo">
+                </div>
+                <h3 class="member-name">Mpetas Alexandros</h3>
+                <p class="member-role">CFO</p>
+                <div class="member-socials">
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="img-wrapper">
+                    <img src="assets/gkarsoudis.jpg" alt="Member" class="member-photo">
+                </div>
+                <h3 class="member-name">Gkarsoudis Dimitrios</h3>
+                <p class="member-role">IoT & Systems Engineer</p>
+                <div class="member-socials">
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section dark-bg">
+        <h2 class="section-title">Initialize Contact</h2>
+        <p class="subtitle" style="text-align: center; margin-bottom: 40px;">Interested in our technology? Let's talk.</p>
+        
+        <div class="contact-container">
+            <form id="contact-form" class="contact-form" action="https://formspree.io/f/YOUR_ENDPOINT_ID" method="POST">
+                <div class="input-group">
+                    <input type="text" id="name" name="name" required placeholder="Your Name" class="form-input">
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" name="email" required placeholder="Your Email" class="form-input">
+                </div>
+                <div class="input-group">
+                    <textarea id="message" name="message" rows="5" required placeholder="Your Message" class="form-input"></textarea>
+                </div>
+                <button type="submit" class="btn-primary btn-submit" id="submit-btn">Send Transmission</button>
+            </form>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h2 class="brand-name">Medusa FS</h2>
+            <p>One Look Is All It Takes.</p>
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="mailto:info@whiteguard.org"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Medusa FS. All Rights Reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
