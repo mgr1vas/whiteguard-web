@@ -145,6 +145,24 @@ body {
     padding: 0 20px;
 }
 
+/* --- Hero Logo & Neon Glow --- */
+.hero-logo {
+    width: 140px; 
+    height: auto;
+    margin-bottom: 25px;
+    filter: drop-shadow(0 0 10px var(--neon-green)) drop-shadow(0 0 25px var(--neon-glow));
+    animation: neon-pulse 2s infinite alternate;
+}
+
+@keyframes neon-pulse {
+    from { 
+        filter: drop-shadow(0 0 8px var(--neon-green)) drop-shadow(0 0 15px var(--neon-glow)); 
+    }
+    to { 
+        filter: drop-shadow(0 0 15px var(--neon-green)) drop-shadow(0 0 35px var(--neon-glow)); 
+    }
+}
+
 .hero h1 {
     font-family: 'Orbitron', sans-serif;
     font-size: 4.5rem;
