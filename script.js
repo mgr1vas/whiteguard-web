@@ -50,3 +50,37 @@ document.getElementById('contact-form').addEventListener('submit', function(even
         btn.style.cursor = 'pointer';
     });
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const cookieBanner = document.getElementById("cookie-banner");
+    const acceptBtn = document.getElementById("accept-cookies");
+    const declineBtn = document.getElementById("decline-cookies");
+
+    // Check if the user's consent choice is already stored
+    if (!document.cookie.includes("medusa_cookie_consent")) {
+        // If not found, show the banner after a 1-second delay
+        setTimeout(() => {
+            cookieBanner.classList.add("show");
+        }, 1000);
+    }
+
+    // When the Accept button is clicked
+    acceptBtn.addEventListener("click", () => {
+        // Store the cookie for 365 days (60 * 60 * 24 * 365 seconds)
+        document.cookie = "medusa_cookie_consent=accepted; max-age=" + 60*60*24*365 + "; path=/";
+        // Hide the banner
+        cookieBanner.classList.remove("show");
+        
+        // (Optional) Here you can trigger Google Analytics or other tracking scripts in the future
+        console.log("Cookies accepted. Analytics can be loaded.");
+    });
+
+    // When the Decline button is clicked
+    declineBtn.addEventListener("click", () => {
+        // Store the declined state for 30 days so the banner doesn't keep annoying the user
+        document.cookie = "medusa_cookie_consent=declined; max-age=" + 60*60*24*30 + "; path=/";
+        // Hide the banner
+        cookieBanner.classList.remove("show");
+        
+        console.log("Cookies declined. Analytics blocked.");
+    });
+});
