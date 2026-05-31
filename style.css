@@ -562,6 +562,70 @@ body {
     font-size: 0.9rem;
 }
 
+/* --- Cookie Banner --- */
+.cookie-banner {
+    position: fixed;
+    bottom: -100%; /* Είναι κρυμμένο αρχικά (εκτός οθόνης) */
+    left: 0;
+    width: 100%;
+    background: rgba(3, 19, 10, 0.95);
+    border-top: 1px solid var(--neon-green);
+    box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.8), 0 0 15px var(--neon-glow);
+    padding: 20px 5%;
+    z-index: 9999;
+    transition: bottom 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    backdrop-filter: blur(10px);
+}
+
+.cookie-banner.show {
+    bottom: 0; /* Εμφανίζεται με ομαλό animation */
+}
+
+.cookie-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.cookie-content p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.cookie-content a {
+    color: var(--neon-green);
+    text-decoration: underline;
+    transition: text-shadow 0.3s;
+}
+
+.cookie-content a:hover {
+    text-shadow: 0 0 8px var(--neon-glow);
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 15px;
+    flex-shrink: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .cookie-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .cookie-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
 /* --- Responsive Adjustments --- */
 @media (min-width: 768px) {
     .achievement-container {
